@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+
+@font-face {
+    font-family: Freudian;
+    src: url(fonts/Freudian\ One\ Demo.ttf);
+}
+
+@font-face {
+    font-family: greycliff;
+    src: url(./fonts/subset-GreycliffCF-Medium.woff2);
+}
+
+
+:root{
+    --bg1: #89a96f;
+    --transform-origin: right;
+    --transform-origin2: left;
+    --scaleX: 0;
+}
+
+
+.text-stroke {
+    -webkit-text-stroke: #89A96F 3px;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.hover-anm1{
+    position: relative;
+}
+
+
+.hover-anm1::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 1.75px;
+    transform-origin: var(--transform-origin);
+    transform: scaleX(var(--scaleX));
+    transition: transform .4s;
+    background-color: #95c46e;
+}
+
+.hover-anm2{
+    position: relative;
+}
+
+
+.hover-anm2::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 1.75px;
+    transform-origin: var(--transform-origin2);
+    transform: scaleX(var(--scaleX));
+    transition: transform .4s;
+    background-color: #95c46e;
+}
+
+.hoveranm3{
+    position: relative;
+}
+
+
+.hoveranm3::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 1.75px;
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: transform .4s;
+    background-color: #95c46e;
+}
+
+.hoveranm3:hover::before{
+    transform: scaleX(1);
+}

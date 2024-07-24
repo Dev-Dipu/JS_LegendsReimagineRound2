@@ -1,16 +1,475 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
 
+    <link 
+    rel="stylesheet"  href="https://unpkg.com/sheryjs/dist/Shery.css" 
+    />
+    <!-- Recommended -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <link rel="stylesheet" href="style.css" />
 
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  </head>
+  <body>
+    <div
+      id="mousefollower"
+      class="opacity-0 w-4 h-4 rounded-full bg-white mix-blend-difference pointer-events-none flex items-center justify-center absolute top-0 left-0 translate-x-[-50%] translate-y-[-50%] z-[9999] max-[425px]:invisible"
+    ></div>
+
+    <div id="main" class="w-full relative overflow-hidden bg-[var(--bg1)]">
+
+      
+      <div class="section1 relative w-full h-screen">
+        <!-- MOBILE -->
+
+        <div
+          class="menuSction max-[425px]:visible invisible font-['greycliff'] absolute top-0 left-[-101%] z-[99] w-full h-screen bg-[#89a96f] pt-[3vh] px-2"
+        >
+          <div
+            class="flex items-center justify-between border-b-2 border-white"
+          >
+            <h2 class="text-[2.5rem] font-[500] text-white">MENU</h2>
+
+            <span class="menuClose">
+              <span class="block w-[2rem] h-[2px] bg-white"></span>
+              <span class="block w-[2rem] h-[2px] bg-white mt-[-2px]"></span>
+            </span>
+          </div>
+
+          <ul class="flex flex-col gap-6 leading-[1] pt-4 text-white">
+            <a
+              class="block text-[2rem] font-[400] menuText h-[2.1rem] overflow-hidden"
+              href=""
+              >Home</a
+            >
+            <a
+              class="block text-[2rem] font-[400] menuText h-[2.1rem] overflow-hidden"
+              href=""
+              >We Are Tribe</a
+            >
+            <a
+              class="block text-[2rem] font-[400] menuText h-[2.1rem] overflow-hidden"
+              href=""
+              >Sisterland</a
+            >
+            <a
+              class="block text-[2rem] font-[400] menuText h-[2.1rem] overflow-hidden"
+              href=""
+              >colors de benetton</a
+            >
+            <a
+              class="block text-[2rem] font-[400] menuText h-[2.1rem] overflow-hidden"
+              href=""
+              >united dreams</a
+            >
+          </ul>
+        </div>
+
+        <nav
+          class="nav absolute top-0 left-[50%] translate-x-[-50%] w-[92%] py-6 mx-auto flex items-center justify-between font-['greycliff'] font-[400] text-[.8rem] tracking-[1px] border-b-[1px] border-[#eeeeee] overflow-hidden max-[425px]:py-4"
+        >
+          <div
+            class="nav-anm uppercase w-[33.33%] flex items-center justify-start gap-4 text-white"
+          >
+            <a href="" class="hover-anm1 max-[425px]:hidden">Home</a>
+            <a href="" class="hover-anm1 max-[425px]:hidden">We Are Tribe</a>
+            <a href="" class="hover-anm1 max-[425px]:hidden">Sisterland</a>
+
+            <div
+              class="w-fit h-fit flex flex-col gap-2 menu max-[425px]:visible invisible"
+            >
+              <span class="block w-[2rem] h-[2px] bg-white"></span>
+              <span class="block w-[2rem] h-[2px] bg-white"></span>
+            </div>
+          </div>
+
+          <div class="nav-anm w-[33.33%] flex items-center justify-center">
+            <a href="" class="magnetoAll block"
+              ><img class="invert" src="assets/svg/logo2.svg" alt=""
+            /></a>
+          </div>
+
+          <div
+            class="nav-anm uppercase w-[33.33%] flex items-center justify-end gap-4 text-white"
+          >
+            <a href="" class="hover-anm2 max-[425px]:hidden"
+              >colors de benetton</a
+            >
+            <a href="" class="hover-anm2 max-[425px]:hidden">united dreams</a>
+            <a
+              href=""
+              class="px-3 py-1 border-[1px] border-[#f5f5f5] flex items-center gap-2 max-[425px]:text-[.7rem] hover:bg-black hover:border-[#000] ease-in duration-[.4s] max-[425px]:px-[.6rem]"
+              >beneton
+              <span
+                class="inline-block w-[14px] h-[12px] invert bg-no-repeat bg-contain bg-[url('assets/svg/arrow.svg')]"
+              ></span
+            ></a>
+          </div>
+        </nav>
+
+        <div
+          id="hero"
+          class="w-full h-screen font-[Freudian] flex flex-col items-center justify-center"
+        >
+          <div class="mt-12 flex flex-col items-center justify-center">
+            <div
+              class="text-move-left-P relative w-[56vw] flex justify-end overflow-hidden max-[425px]:w-[90vw]"
+            >
+              <span
+                class="box-blur block z-[10] absolute top-0 left-[-10%] blur-[10px] h-[100%] w-[8rem] bg-[var(--bg1)] max-[425px]:left-[-40%] max-[425px]:blur-[6px]"
+              ></span>
+              <h1
+                class="text-move-left text-y-anm uppercase text-nowrap text-[#f1f1f1] text-center text-[11.5vw] leading-[1] [text-shadow:_0px_0px_7px_#1747002b] max-[425px]:text-[29.5vw]"
+              >
+                senses with
+              </h1>
+              <h1
+                class="text-move-left text-y-anm uppercase text-nowrap text-[#f1f1f1] text-center text-[11.5vw] leading-[1] [text-shadow:_0px_0px_7px_#1747002b] max-[425px]:text-[29.5vw]"
+              >
+                senses with
+              </h1>
+              <span
+                class="box-blur block z-[10] absolute top-0 right-[-10%] blur-[10px] h-[100%] w-[8rem] bg-[var(--bg1)] max-[425px]:right-[-40%] max-[425px]:blur-[6px]"
+              ></span>
+            </div>
+
+            <div
+              class="text-move-right-P relative w-[81vw] flex overflow-hidden max-[425px]:w-[100vw]"
+            >
+              <span
+                class="box-blur block z-[10] absolute top-0 left-[-9%] blur-[10px] h-[100%] w-[8rem] bg-[var(--bg1)] max-[425px]:left-[-37%] max-[425px]:blur-[5px]"
+              ></span>
+              <h1
+                class="text-move-right text-y-anm uppercase text-nowrap text-[#f1f1f1] text-center text-[14vw] leading-[1] [text-shadow:_0px_0px_7px_#1747002b] max-[425px]:text-[35.5vw]"
+              >
+                unforot table
+              </h1>
+              <h1
+                class="text-move-right text-y-anm uppercase text-nowrap text-[#f1f1f1] text-center text-[14vw] leading-[1] [text-shadow:_0px_0px_7px_#1747002b] max-[425px]:text-[35.5vw]"
+              >
+                unforot table
+              </h1>
+              <span
+                class="box-blur block z-[10] absolute top-0 right-[-9%] blur-[10px] h-[100%] w-[8rem] bg-[var(--bg1)] max-[425px]:right-[-37%] max-[425px]:blur-[5px]"
+              ></span>
+            </div>
+
+            <div class="w-full leading-[0] mx-auto">
+              <div
+                class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+              >
+                <img
+                  id="flot-bottle"
+                  class="w-[26vw] h-[100%] object-cover contrast-[1.2] brightness-[0.9] hue-rotate-[346deg] scale-x-[1.07] scale-y-[1.01] translate-y-[-5%] max-[425px]:scale-[1.7] max-[425px]:w-[100vw]"
+                  src="assets/img/bottle.gif"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div
+              class="text-move-left-P relative w-[31vw] flex justify-end overflow-hidden max-[425px]:w-[78vw]"
+            >
+              <span
+                class="box-blur block z-[10] absolute top-0 left-[-15%] blur-[8px] h-[100%] w-[5rem] bg-[var(--bg1)] max-[425px]:left-[-29%] max-[425px]:blur-[5px]"
+              ></span>
+              <h1
+                class="text-move-left text-y-anm relative uppercase z-[1] text-nowrap text-[#f1f1f1] text-center text-[10.5vw] leading-[.9] [text-shadow:_0px_0px_7px_#1747002b] max-[425px]:text-[29.5vw]"
+              >
+                fragrances
+              </h1>
+              <h1
+                class="text-move-left text-y-anm relative uppercase z-[1] text-nowrap text-[#f1f1f1] text-center text-[10.5vw] leading-[.9] [text-shadow:_0px_0px_7px_#1747002b] max-[425px]:text-[29.5vw]"
+              >
+                fragrances
+              </h1>
+              <span
+                class="box-blur block z-[10] absolute top-0 right-[-15%] blur-[8px] h-[100%] w-[5rem] bg-[var(--bg1)] max-[425px]:right-[-29%] max-[425px]:blur-[5px]"
+              ></span>
+            </div>
+          </div>
+
+          <div
+            class="flower1 absolute bottom-[-10rem] left-[-15rem] scale-[2] blur-[5px]"
+          >
+            <img
+              class="max-[425px]:w-[85%]"
+              src="assets/img/flower.png"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="absolute bottom-[2vw] right-[3vw] max-[425px]:bottom-[4vw]"
+          >
+            <a
+              href=""
+              class="magnetoAll block absolute top-[-85%] right-[1rem] z-[3] text-[1.5rem] text-white max-[425px]:top-[-100%] max-[425px]:right-[.5rem]"
+              ><i class="ri-instagram-line"></i
+            ></a>
+
+            <h3
+              class=" cursor-pointer text-y-anm overflow-hidden relative z-[2] uppercase text-[1.5vw] font-[600] text-[#fff] [text-shadow:_0px_0px_4px_#433c0f82] tracking-[2px] max-[425px]:text-[5.5vw]"
+            >
+              #JOIN<span class="inline-block font-[400]">SISTERLAND</span>
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="section2 relative w-full h-screen mb-32 max-[425px]:mb-0 flex items-center justify-center overflow-hidden max-[425px]:overflow-visible"
+      >
+        <video
+          id="trailerVideo"
+          class="video-unmuted w-[90%] h-[85%] object-cover"
+          muted
+          loop
+          src="assets/video/sisterland_trailer.mp4"
+        ></video>
+
+        <span
+          class="flower2 block rotate-[-135deg] absolute top-0 right-[-5%] translate-y-[-100%] blur-[3px] max-[425px]:top-[35%] max-[425px]:left-[40%]"
+        >
+          <img
+            class="w-[100%] h-[100%] object-contain max-[425px]:w-[60%]"
+            src="assets/img/flower2.png"
+            alt=""
+        /></span>
+      </div>
+
+      <div class="section3 h-fit md:h-screen md:px-20 grid md:grid-cols-3 md:grid-rows-2 grid-cols-1 grid-rows-6 max-[425px]:flex max-[425px]:flex-col max-[425px]:gap-12 max-[425px]:mb-16">
+        <div class="cards1 gooey brightness-90 h-[45vh] md:h-auto">
+          <img
+            class="w-[100%] h-[100%] object-cover"
+            src="assets/img/perfumeimg1.jpg"
+            alt=""
+          />
+          <img
+            class="w-[100%] h-[100%] object-cover"
+            src="assets/img/perfumeimg1back.jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="relative h-[40vh] md:h-auto">
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl text-[#89A96F] z-10 font-['Freudian'] max-[425px]:text-[4.7rem] max-[425px]:tracking-[1.5px]"
+          >
+            <h2 class="ctext1 uppercase  text-center leading-none">
+              perfume
+            </h2>
+            <h1
+              class="ctext2 uppercase md:text-[164px]  text-center leading-none text-stroke text-transparent md:text-[#89A96F]"
+            >
+              <span class="text-stroke md:text-transparent">b</span>enetto<span
+                class="text-stroke md:text-transparent"
+                >n</span
+              >
+            </h1>
+          </div>
+        </div>
+
+        <div class="cards1 gooey h-[45vh] md:h-auto">
+          <img
+            class="w-[100%] h-[100%] object-cover"
+            src="assets/img/perfumeimg2.jpg"
+            alt=""
+          />
+          <img
+            class="w-[100%] h-[100%] object-cover"
+            src="assets/img/perfumeimg2back.jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="cards3 h-fit md:h-auto px-4 md:px-0 my-auto">
+          <h1 class="font-['freudian_one'] uppercase text-6xl md:py-8 py-2">
+            Best-Selling <br />
+            Must - Haves
+          </h1>
+          <p class="leading-5 mt-2 text-lg w-[90%] font-[greycliff]">
+            GOLDEN VANILLA joins Sisterland radiating her charisma and
+            character, creating a space of luminous energy to elevate her own
+            and her sisters' glow with authenticity and confidence.
+          </p>
+          <span class="line block w-36 h-[3px] my-6 bg-[#89A96F]"></span>
+          <div class="flex gap-20 items-center md:mt-8 my-4">
+            <h1 class="font-['freudian_one'] uppercase text-4xl">
+              See new arrivals
+            </h1>
+
+            <span class="curcur-arrow-btn block cursor-pointer w-10">
+              <span
+                class="curcur block h-10 w-10 rounded-full border-2 border-[#89A96F] border-dashed relative"
+                ><span
+                  class="arrow absolute bg-[#89A96F] h-full w-full rounded-full flex items-center justify-center -translate-x-3/4"
+                  ><i class="ri-arrow-right-line text-xl text-white"></i></span
+              ></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="cards2 gooey h-[45vh] md:h-auto">
+          <img
+            class="w-[100%] h-[100%] object-cover"
+            src="assets/img/perfumeimg3.jpg"
+            alt=""
+          />
+          <img
+            class="w-[100%] h-[100%] object-cover"
+            src="assets/img/perfumeimg3back.jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="cards4 flex items-center justify-evenly max-[425px]:flex-col max-[425px]:gap-8">
+          <span class="border-2 border-[#89A96F] rounded-full">
+            <div
+              class="section3Card4 h-64 w-36 rounded-full bg-gradient-to-t from-purple-900 from-10% via-white flex items-center justify-center m-1 max-[425px]:w-[90vw] max-[425px]:h-[24vh]"
+            >
+              <img
+                class="h-4/5 w-4/5 object-contain"
+                src="./assets/img/perfumerotate2.gif"
+                alt=""
+              />
+            </div>
+          </span>
+          <span class="border-2 border-[#89A96F] rounded-full">
+            <div
+              class="section3Card4 h-64 w-36 rounded-full bg-gradient-to-t from-cyan-500 from-10% via-white flex items-center justify-center m-1 max-[425px]:w-[90vw] max-[425px]:h-[24vh]"
+            >
+              <img
+                class="h-4/5 w-4/5 object-contain"
+                src="./assets/img/perfumerotate.gif"
+                alt=""
+              />
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div
+        data-scroll
+        data-scroll-speed="2"
+        class="section4 relative z-[5] h-fit md:h-screen md:text-[178px] text-[90px] bg-white leading-none font-['freudian_one'] md:px-20 flex items-center md:justify-between gap-5 flex-col md:flex-row max-[425px]:text-[22vw]"
+      >
+        <div class="flex flex-col text-[#89A96F] overflow-hidden pr-32 max-[425px]:pr-0">
+          <div class="flex items-center gap-6 md:gap-8 max-[425px]:items-start">
+            <h1 class="show-text uppercase">new</h1>
+            <span class="show-text show-text-rotate block">
+              <img class="h-16 md:h-auto" src="./assets/img/star.svg" alt="" />
+            </span>
+          </div>
+
+          <div class="md:ml-16 max-[425px]:ml-0">
+            <h1 class="show-text uppercase">perfume</h1>
+          </div>
+
+          <div class="md:ml-32 max-[425px]:ml-0">
+            <h1 class="show-text uppercase">collection</h1>
+          </div>
+        </div>
+
+        <div class="md:h-4/5 h-[55vh]">
+          <img
+            class="w-[100%] h-[100%]"
+            src="./assets/img/groupimg.png"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div
+        class="footer pointer-events-auto w-full text-white bg-[#89A96F] font-[greycliff] text-[.95rem] tracking-[1.2px] leading-[1] px-5 md:px-20 md:mt-8 mt-6 max-[425px]:text-[5vw]"
+      >
+        <div
+          class="flex flex-col md:flex-row justify-between items-center md:items-start h-auto md:h-[200px] pt-2 max-[425px]:items-start"
+        >
+          <div
+            class="mt-6 md:mt-[20px] flex flex-col gap-4 md:gap-3 items-center md:items-start max-[425px]:items-start"
+          >
+            <a href="" class="hover-anm2">EXPLORE</a>
+            <a href="" class="hover-anm2">Inside Benetton</a>
+            <a href="" class="hover-anm2">Benetton Group</a>
+            <a href="" class="hover-anm2">Riciclabili Imballaggi</a>
+          </div>
+
+          <div
+            class="mt-2 md:mt-[20px] text-center px-2 md:px-0 flex flex-col items-center  max-[425px]:px-0 max-[425px]:mt-10"
+          >
+            <a
+              href=""
+              class="block hoveranm3 md:mb-4 mt-[17px] cursor-pointer font-['Freudian'] text-[1.4rem] w-[60%] max-[425px]:text-[6.5vw] max-[425px]:mb-2"
+            >
+              UNITED COLORS OF BENETTON
+            </a>
+
+            <a href="" class="magnetoAll block">
+              <i class="ri-instagram-line text-2xl max-[425px]:text-3xl"></i>
+            </a>
+          </div>
+
+          <div
+            class="mt-4 md:mt-[20px] flex flex-col gap-4 md:gap-3 items-center md:items-end max-[425px]:items-end max-[425px]:w-full"
+          >
+            <a href="" class="hover-anm2 cursor-pointer">Legals</a>
+            <a href="" class="hover-anm2 cursor-pointer">Cookies</a>
+            <a href="" class="hover-anm2 cursor-pointer">Privacy Policy</a>
+            <a href="" class="hover-anm2 hover:underline cursor-pointer"
+              >benetton@gmail.com</a
+            >
+          </div>
+        </div>
+        <div class="w-full text-center">
+          <span class="block w-full h-[1px] bg-white mt-3 md:mt-0"></span>
+          <p class="text-sm py-4">
+            <i class="ri-copyright-line"></i> 2024 Benetton Group
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shery js -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/sheryjs/dist/Shery.js"
+    ></script>
+    <!-- Recommended -->
+
+    <!-- LOCOMOTIVE CDN -->
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+
+    <!-- GSAP CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
