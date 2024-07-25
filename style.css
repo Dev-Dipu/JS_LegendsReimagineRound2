@@ -21,7 +21,7 @@ html , body{
 
 
 :root{
-    --bg1: #89a96f;
+    --bg1: #95C48D;
     --transform-origin: right;
     --transform-origin2: left;
     --scaleX: 0;
@@ -29,7 +29,7 @@ html , body{
 
 
 .text-stroke {
-    -webkit-text-stroke: #89A96F 3px;
+    -webkit-text-stroke: #95C48D 3px;
     background-clip: text;
     -webkit-background-clip: text;
 }
@@ -49,7 +49,7 @@ html , body{
     transform-origin: var(--transform-origin);
     transform: scaleX(var(--scaleX));
     transition: transform .4s;
-    background-color: #95c46e;
+    background-color: #fff;
 }
 
 .hover-anm2{
@@ -67,7 +67,7 @@ html , body{
     transform-origin: var(--transform-origin2);
     transform: scaleX(var(--scaleX));
     transition: transform .4s;
-    background-color: #95c46e;
+    background-color: #fff;
 }
 
 .hoveranm3{
@@ -85,7 +85,7 @@ html , body{
     transform-origin: center;
     transform: scaleX(0);
     transition: transform .4s;
-    background-color: #95c46e;
+    background-color: #fff;
 }
 
 .hoveranm3:hover::before{
